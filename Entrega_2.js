@@ -1,4 +1,4 @@
-// Nivell 1 - Exercici 1  --- //! REVISAR!!! NO FUNCIONA
+// Nivell 1 - Exercici 1  --- 
 // Mostra per la consola el resultat d'una arrow function autoinvocable que sumi dos nombres.
 
 // ((a, b) => { console.log(`El resultat de la suma de ${a} i ${b} és ${a + b}`) })(2, 7);   //*Exercici antic
