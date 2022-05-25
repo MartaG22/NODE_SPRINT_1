@@ -68,11 +68,30 @@ provem.metodeError();
 
 //Corregido: ACABARLO
 class Animal {
-
+    constructor(tipo) {
+        this.tipo = tipo;
+    }
+    display() {
+        console.log("Aquest és un animal" + this.tipo);
+    }
+    metodeError() {
+        throw new Error("No funciona")
+    }
+}
+class Loro extends Animal {
+    constructor(tipo) {
+        super(tipo);
+    }
+    display() {
+        console.log(`L'animal és un ocell`)
+    }
+    metodeError() {
+        console.log()
+    }
 }
 
-function crearObjecte(cosa) {
+// function crearObjecte(cosa) {
 
-}
-let gat = crearObjecte("gat");
-let gos = crearObjecte("gos");
+// }
+// let gat = crearObjecte("gat");
+// let gos = crearObjecte("gos");
