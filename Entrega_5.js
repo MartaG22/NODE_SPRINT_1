@@ -1,16 +1,3 @@
-
-// https://runebook.dev/es/docs/node/zlib
-// https://www.geeksforgeeks.org/node-js-util-promisify-method/
-
-// https://parzibyte.me/blog/2018/12/27/leer-archivo-node-js-fs-readline/
-// https://www.tutorialesprogramacionya.com/javascriptya/nodejsya/detalleconcepto.php?punto=4&codigo=4&inicio=0
-// https://nodejs.org/en/knowledge/getting-started/what-is-require/
-// https://pharos.sh/escribir-en-archivos-en-node-js/
-// https://programmerclick.com/article/58191967585/
-// https://www.youtube.com/watch?v=JxSsCqZ_xjw
-// https://www.youtube.com/watch?v=BhvLIzVL8_o
-
-
 // Nivell 1 - Exercici 1
 // Crea una funció que, en executar-la, escrigui una frase en un fitxer.
 
@@ -62,14 +49,14 @@ pipeline(arxiuAComprimir, arxiuZip, destinacio, (err) => {
 
 
 
-// let missatgRecursiu = () => {
-//     let i = 0;
-//     setInterval(() => {
-//         console.log(`${i++}.- Aquest és un missatge recursiu! `);
-//     }, 1000)
-// }
+let missatgRecursiu = () => {
+    let i = 0;
+    setInterval(() => {
+        console.log(`${i++}.- Aquest és un missatge recursiu! `);
+    }, 1000)
+}
 
-// missatgRecursiu();
+missatgRecursiu();
 
 
 
@@ -77,14 +64,14 @@ pipeline(arxiuAComprimir, arxiuZip, destinacio, (err) => {
 /* Crea una funció que llisti per la consola el contingut del directori d'usuari de l'ordinador
  utilizant Node Child Processes.// No està fet amb appendchild*/
 
-// const urlUser = os.homedir();
-// const files = fs.readdir(urlUser, (err, files) => {
-//     if (err) {
-//         console.log('Error', err.message);
-//     } else {
-//         console.log(`Contingut del directori de l'usuari ${urlUser}:`, files);
-//     }
-// })
+const urlUser = os.homedir();
+const files = fs.readdir(urlUser, (err, files) => {
+    if (err) {
+        console.log('Error', err.message);
+    } else {
+        console.log(`Contingut del directori de l'usuari ${urlUser}:`, files);
+    }
+})
 
 
 
