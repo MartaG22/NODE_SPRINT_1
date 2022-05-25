@@ -1,14 +1,19 @@
-// Nivell 1 - Exercici 1  --- //!REVISAR
+// Nivell 1 - Exercici 1  --- //! REVISAR!!! NO FUNCIONA
 // Mostra per la consola el resultat d'una arrow function autoinvocable que sumi dos nombres.
 
-// ((a, b) => { console.log(`El resultat de la suma de ${a} i ${b} és ${a + b}`) })(2, 7);
+// ((a, b) => { console.log(`El resultat de la suma de ${a} i ${b} és ${a + b}`) })(2, 7);   //*Exercici antic
 
-console.log(((a, b) => a + b)(3 + 4)); //BUENO!!
+let arrowFunction = ((a, b) => {
+    return a + b;
+})(3, 4);
+console.log(arrowFunction);
 
-// Nivell 2 - Exercici 1 ---  //!REVISAR
+console.log(((a, b) => a + b)(3, 4));
+
+// Nivell 2 - Exercici 1 --- 
 // Crea una arrow function que, rebent un paràmetre, retorni un objecte amb un atribut que tingui com a valor el paràmetre rebut.
 
-const user = (nom, cognom) => [`${nom} ${cognom}`];
+const user = (name, surname) => ({ nom: name, cognom: surname });
 console.log(user("Bart", "Simpson"));
 
 
@@ -31,67 +36,74 @@ nuevaPersona.dirNom();
 
 
 
-//Nivell 3 - Exercici 1   ---  //!REVISAR
+//Nivell 3 - Exercici 1   ---  //*Exercici antic
 // Escriu una function creadora d'objectes que faci instàncies d'una classe abstracta. Invoca-la amb diferents definicions.
 
-class ClasseAbstracta {
-    constructor(texte) {
-        this._texte = texte
-    }
-
-    display() {
-        console.log("Funciona desde classeAbstracta. Texte: " + this._texte);
-    }
-    metodeError() {
-        throw new Error("Has d'implementar el mètode metodeError!");
-    }
-}
-
-class NovaClasse extends ClasseAbstracta {
-    constructor(texte) {
-        super(texte);
-    }
-    display() {
-        console.log("Funciona desde l'extensió NovaClasse. Texte: " + this._texte);
-    }
-
-    metodeError() {
-        console.log("Mètode implementat correctament!")
-    }
-}
-
-let provem = new NovaClasse("Hello!");
-provem.display();
-provem.metodeError();
-
-
-
-//Corregido: ACABARLO
-class Animal {
-    constructor(tipo) {
-        this.tipo = tipo;
-    }
-    display() {
-        console.log("Aquest és un animal" + this.tipo);
-    }
-    metodeError() {
-        throw new Error("No funciona")
-    }
-}
-class Loro extends Animal {
-    constructor(tipo) {
-        super(tipo);
-    }
-    display() {
-        console.log(`L'animal és un ocell`)
-    }
-    metodeError() {
-        console.log()
-    }
-}
-
-// function crearObjecte(cosa) {
-
+// class ClasseAbstracta {
+//     constructor(texte) {
+//         this._texte = texte
+//     }
+//     display() {
+//         console.log("Funciona desde classeAbstracta. Texte: " + this._texte);
+//     }
+//     metodeError() {
+//         throw new Error("Has d'implementar el mètode metodeError!");
+//     }
 // }
-// let gat = crearObjecte("gat");
-// let gos = crearObjecte("gos");
+// class NovaClasse extends ClasseAbstracta {
+//     constructor(texte) {
+//         super(texte);
+//     }
+//     display() {
+//         // throw new Error("Un mètode abstracte no es pot cridar");
+//         console.log("Funciona desde l'extensió NovaClasse. Texte: " + this._texte);
+//     }
+//     metodeError() {
+//         console.log("Mètode implementat correctament!")
+//     }
+// }
+// let provem = new NovaClasse("Hello!");
+// provem.display();
+// provem.metodeError();
+
+
+
+//Exercici  Corregit  ---  (26-5-22)
+
+class Animal {
+    constructor(altreAnimal) {
+        if (this.constructor === Animal) {
+            throw new Error(" No es pot cridar una clase abstracta");
+        }
+        this.altreAnimal = altreAnimal;
+    }
+
+    display() {
+        throw new Error("Abstract Method has no implementation");
+    }
+
+    desplaza() {
+        console.log(`Aquest animal és ${this.altreAnimal}`);
+    }
+
+};
+// Funcio creadora d'objectes
+const CrearAnimal = (tipoAnimal) => {
+    const animal = Object.create(Animal.prototype);
+
+    animal.altreAnimal = tipoAnimal || "no se sap";
+    return animal;
+};
+
+// Invocant funció amb diferents definicions
+let aguila = CrearAnimal("aèri");
+let balena = CrearAnimal("acuàtic");
+let elefant = CrearAnimal("terrestre");
+
+aguila.desplaza();
+balena.desplaza();
+elefant.desplaza();
+
+console.log(balena instanceof Animal);
+
+
