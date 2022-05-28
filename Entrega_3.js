@@ -1,4 +1,6 @@
-// Nivell 1 - Exercici 1    //?-----OKKKKK
+//?Entrega 1.3: Promises & Callbacks
+
+// Nivell 1 - Exercici 1    //*-----OKKKKK
 /* Crea una funció que retorni una Promise que invoqui la funció resolve() o reject() que rep.
 Invoca-la passant-li les dues funcions de manera que imprimeixin un missatge diferent depenent de si la Promise es resol o no.*/
 
@@ -26,17 +28,46 @@ miPromesa().then(function (missatge) {
 // Nivell 1 - Exercici 2   //! --- REVISAR
 /*Crea una arrow function que rebi un paràmetre i una funció callback i li passi a la funció un missatge o un altre (que s'imprimirà per consola) en funció del paràmetre rebut.*/
 
-const operacio = (nombre, callback) => {
+/*const operacio = (nombre, callback) => {
     console.log(nombre);
-    if (nombre % 2 === 0) {
+    if (nombre % 2 === 0){
+        callback({}
+
+        )
         return console.log(`El nombre ${nombre} és parell!!!`);
     } else {
         return console.log(`El nombre ${nombre} NO és parell! És senar!!!`);
     }
 }
-operacio(parseInt(Math.random() * 100), (a) => a);
+operacio(parseInt(Math.random() * 100), (a) => a); */
 
 
+
+// const operacio = (number, callback) => {
+//     let number2(parseInt(Math.random() * 100);
+//     console.log(number);
+//     if (nombre % 2 === 0) {
+//         callback(number)
+//         return console.log(`El nombre ${nombre} és parell!!!`);
+//     } else {
+//         return console.log(`El nombre ${nombre} NO és parell! És senar!!!`);
+//     }
+// }
+
+// operacio(parseInt(Math.random() * 100), callback);
+
+const operacio = (number, callback) => {
+    let number2(parseInt(Math.random() * 100);
+    console.log(number);
+    if (nombre % 2 === 0) {
+        callback(number)
+        return console.log(`El nombre ${nombre} és parell!!!`);
+    } else {
+        return console.log(`El nombre ${nombre} NO és parell! És senar!!!`);
+    }
+}
+
+operacio("Aquest és l'argument", callback);
 
 // Nivell 2 - Exercici 1  //! --- REVISAR
 
@@ -98,29 +129,6 @@ getEmployee().then(function (positionEmployee) {
 /* Crea una altra arrow function getSalary() similar a l'anterior que rebi com a paràmetre un objecte employee i
   retorni el seu salari.*/
 
-/* let employees = [{
-    id: 1,
-    name: 'Linux Torvalds'
-}, {
-    id: 2,
-    name: 'Bill Gates'
-}, {
-    id: 3,
-    name: 'Jeff Bezos'
-}];
-
-let salaries = [{
-    id: 1,
-    salary: 4000
-}, {
-    id: 2,
-    salary: 1000
-}, {
-    id: 3,
-    salary: 2000
-}];*/
-
-
 function getSalary() {
     return new Promise(function (resolve, reject) {
         let getId = (parseInt(Math.random() * 5));
@@ -156,27 +164,6 @@ getSalary().then(function (positionEmployee) {
 /* Invoca la primera funció getEmployee() i després getSalary() niant l'execució de les dues promises
   de manera que es retorni per la consola el nom de l'empleat i el seu salari.*/
 
-/* let employees = [{
-    id: 1,
-    name: 'Linux Torvalds'
-}, {
-    id: 2,
-    name: 'Bill Gates'
-}, {
-    id: 3,
-    name: 'Jeff Bezos'
-}];
-
-let salaries = [{
-    id: 1,
-    salary: 4000
-}, {
-    id: 2,
-    salary: 1000
-}, {
-    id: 3,
-    salary: 2000
-}];*/
 
 function getEmployee() {
     return new Promise(function (resolve) {
@@ -219,27 +206,6 @@ getEmployee().then(function (positionEmployee) {
 
 /* Fixa un element catch a la invocació del nivell anterior que capturi qualsevol error i el mostri per la consola.*/
 
-/*let employees = [{
-    id: 1,
-    name: 'Linux Torvalds'
-}, {
-    id: 2,
-    name: 'Bill Gates'
-}, {
-    id: 3,
-    name: 'Jeff Bezos'
-}];
-
-let salaries = [{
-    id: 1,
-    salary: 4000
-}, {
-    id: 2,
-    salary: 1000
-}, {
-    id: 3,
-    salary: 2000
-}]; */
 
 function getEmployee() {
     return new Promise(function (resolve, reject) {
