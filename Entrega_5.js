@@ -1,34 +1,48 @@
+//!  Entrega 1.5: Node Utils
+
 // Nivell 1 - Exercici 1
 // Crea una funció que, en executar-la, escrigui una frase en un fitxer.
 
+//*Exercici  Corregit  ------------------     (29-5-22)     --------------------
 
 const os = require('os');
 const fs = require('fs');
 
-let frase = 'Estic escrivint una frase en un arxiu!!!';
-fs.writeFile('write_file.txt', frase, (err) => {
-    if (err) {
-        throw err;
-    }
-    console.log("Frase escrita a l'arxiu `write_file.txt`!");
-});
+const writeSentence = () => {
+    let frase = 'Estic escrivint una frase en un arxiu!!!';
+    fs.writeFile('write_file.txt', frase, (err) => {
+        if (err) {
+            throw err;
+        }
+        console.log("Frase escrita a l'arxiu `write_file.txt`!");
+    });
+}
+writeSentence();
 
 
 
 // Nivell 1 - Exercici 2
 // Crea una altra funció que mostri per consola el contingut del fitxer de l'exercici anterior.
 
-let nomArxiu = "write_file.txt";
+//*Exercici  Corregit  ------------------     (29-5-22)     --------------------
 
-fs.readFile(nomArxiu, 'utf8', (error, frase) => {
-    if (error) throw error;
-    console.log(`El contingut de l'arxiu és: ${frase}`);
-});
+const showSentence = () => {
+    let nomArxiu = "write_file.txt";
+
+    fs.readFile(nomArxiu, 'utf8', (error, frase) => {
+        if (error) throw error;
+        console.log(`El contingut de l'arxiu és: ${frase}`);
+    });
+}
+showSentence();
 
 
 
 // Nivell 1 - Exercici 3
 /* Crea una funció que comprimeixi el fitxer del nivell 1.*/
+
+
+//*Exercici  Corregit  ------------------     (29-5-22)     --------------------
 
 const { createGzip } = require('zlib');
 const { pipeline } = require('stream');
@@ -38,25 +52,31 @@ const arxiuZip = createGzip();
 const arxiuAComprimir = createReadStream('write_file.txt');
 const destinacio = createWriteStream('write_file.txt.gz');
 
-pipeline(arxiuAComprimir, arxiuZip, destinacio, (err) => {
-    if (err) {
-        console.error('Ha ocurregut un errer:', err);
-    }
-});
+const createFileZip = () => {
+    pipeline(arxiuAComprimir, arxiuZip, destinacio, (err) => {
+        if (err) {
+            console.error('Ha ocurregut un errer:', err);
+        }
+    });
+}
+createFileZip()
+
+
 
 // Exercici 1
 // Crea una funció que imprimeixi recursivament un missatge per la consola amb demores d'un segon.
 
 
+//*Exercici  Corregit  ------------------     (29-5-22)     --------------------
 
-let missatgRecursiu = () => {
+const missatgeRecursiu = () => {
     let i = 0;
     setInterval(() => {
         console.log(`${i++}.- Aquest és un missatge recursiu! `);
     }, 1000)
 }
 
-missatgRecursiu();
+missatgeRecursiu();
 
 
 
@@ -72,7 +92,6 @@ const files = fs.readdir(urlUser, (err, files) => {
         console.log(`Contingut del directori de l'usuari ${urlUser}:`, files);
     }
 })
-
 
 
 // Exercici 1
