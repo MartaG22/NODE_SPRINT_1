@@ -1,3 +1,5 @@
+//! Functions & Template Literals
+
 // Nivell 1 - Exercici 1
 function exercici1_1(nom, cognom) {
     console.log(nom, cognom);
