@@ -3,29 +3,29 @@
 // Nivell 1 - A  //! okkkk
 /*Crea un arxiu amb les funcions sumar, restar, multiplicar i dividir dos o més operands. Testeja la correcta execució d'aquestes funcions.*/
 
-const calcAndEmpl = require("../app/operacions_1-6.js");
+const calculate = require("../app/operacions_1-6.js");
 
 describe("function sumar", () => {
     test('sumar 1 + 2 to equal 3', () => {
-        expect(calcAndEmpl.sumar(1, 2)).toBe(3);
+        expect(calculate.sumar(1, 2)).toBe(3);
     });
 });
 
 describe("function restar", () => {
     test('restar 3 - 1 to equal 2', () => {
-        expect(calcAndEmpl.restar(3, 1)).toBe(2);
+        expect(calculate.restar(3, 1)).toBe(2);
     });
 });
 
 describe("function multiplicar", () => {
     test('multiplicar 3 * 2 = 6', () => {
-        expect(calcAndEmpl.multiplicar(3, 2)).toBe(6);
+        expect(calculate.multiplicar(3, 2)).toBe(6);
     });
 });
 
 describe("function dividir", () => {
     test('dividir 6 / 2 = 3', () => {
-        expect(calcAndEmpl.dividir(6, 2)).toBe(3);
+        expect(calculate.dividir(6, 2)).toBe(3);
     });
 });
 
@@ -36,24 +36,24 @@ describe("function dividir", () => {
 
 const testB = require("../app/asyncAwait_N1-1.js");
 
-test('getEmployee with ID: 2 should return Bill Gates', () => {
-    return testB.getEmployee(2).then(data => {
-        expect(data).toEqual({ id: 2, name: "Bill Gates" })
+test('getEmployee with ID: 2 should return Bill Gates', async () => {
+    await testB.getEmployee(2).then(data => {
+        expect(data).toBe({ id: 2, name: "Bill Gates" })
     });
 })
 
-// test('getEmployee with ID: 2 should return Bill Gates', () => {
-//     return asyncEmployees.getEmployee(2).then(currentName => {
-//         expect(currentName).toEqual({ id: 2, name: "Bill Gates" });
-//     })
-// }
-// )
+// // test('getEmployee with ID: 2 should return Bill Gates', () => {
+// //     return asyncEmployees.getEmployee(2).then(currentName => {
+// //         expect(currentName).toEqual({ id: 2, name: "Bill Gates" });
+// //     })
+// // }
+// // )
 
-// test("getSalary with ID: 2, name: 'Bill Gates' should return 1000", () => {
-//     return testB.getSalary({ id: 2, name: 'Bill Gates' }).then(data => {
-//         expect(data).toBe(1000);
-//     })
-// })
+// // test("getSalary with ID: 2, name: 'Bill Gates' should return 1000", () => {
+// //     return testB.getSalary({ id: 2, name: 'Bill Gates' }).then(data => {
+// //         expect(data).toBe(1000);
+// //     })
+// // })
 
 
 
@@ -72,10 +72,10 @@ test('Should return ID:3, name: Jeff Bezos after 2 seconds', async () => {
 // Nivell 1 - D
 // Crea els tests corresponents per verificar el funcionament de l'exercici **Promises & Callbacks Nivell 2 - Exercici 3
 
-const testD = require("../app/asyncAwait_N2-3.js");
+// const testD = require("../app/asyncAwait_N2-3.js");
 
-test('ID:2 is passed to getEmployee and returns an object that is received by getSalary, which returns 1000'), () => {
-    return testD.getEmployee(2).then(obj => testD.getSalary(obj)).then(data => {
-        expect(data.salary).toBe(1000);
-    })
-}
+// test('ID:2 is passed to getEmployee and returns an object that is received by getSalary, which returns 1000'), () => {
+//     return testD.getEmployee(2).then(obj => testD.getSalary(obj)).then(data => {
+//         expect(data.salary).toBe(1000);
+//     })
+// }
