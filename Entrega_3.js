@@ -154,13 +154,13 @@ getEmployee(1).then(name => {
 
 
 
-// Nivell 3 - Exercici 1     // --- CORREGIT   //! REVISAR
+// Nivell 3 - Exercici 1     // --- CORREGIT   
 
 /* Fixa un element catch a la invocació del nivell anterior que capturi qualsevol error i el mostri per la consola.*/
 
-//Exercici  Corregit  ------------    (28-5-22)    ---------------  //!NO  FUNCIONA SEGÚN INDICA EL ENUNCIADO!
+//Exercici  Corregit  ------------    (28-5-22)    ---------------  
 
-// let id = 6;
+
 getEmployee(6).then(name => {
     console.log(name);
     return getSalary(name);
