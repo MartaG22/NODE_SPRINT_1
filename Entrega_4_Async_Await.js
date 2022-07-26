@@ -1,6 +1,6 @@
 //! Entrega 1.4: Async / Await
 
-// Nivell 1 - Exercici 1   //* --- CORREGIT
+// Nivell 1 - Exercici 1   // --- CORREGIT  //! REPASAR -- 1.5 PUNTOS (DE 3)
 
 /* Crea una funció asíncrona que rebi un id d'empleat i imprimeixi per pantalla el nom de l'empleat i el seu salari, 
  usant les funcions getEmployee() i getSalary() que has definit a la tasca anterior.*/
@@ -117,7 +117,8 @@ async function asyncFunction(id) {
 }
 
 
-// Nivell 1 - Exercici 2   //* --- CORREGIT
+// Nivell 1 - Exercici 2   // --- CORREGIT    
+
 
 /* Crea una nova funció asíncrona que cridi a una altra que retorni una Promise
  que efectuï la seva funció resolve() després de 2 segons de la seva invocació.*/
@@ -133,7 +134,7 @@ async function asyncOperation() {
 asyncOperation().then(total => console.log('Promise:', total));  */
 
 
-//*Exercici  Corregit  ------------------     (29-5-22)     --------------------
+//Exercici  Corregit  ------------     (29-5-22)  -------------  //! OKKK!! -- 2 PUNTOS (MAX)
 
 const sumAfterTwoSeconds = (a, b) => {
     return new Promise(resolve => setTimeout(() => resolve(a + b), 2000));
@@ -158,7 +159,8 @@ asyncOperation(4, 5);
  Crea una altra funció que rebi tres números i calculi la suma dels seus dobles usant la funció anterior.*/
 
 
-//*Exercici  Corregit  ------------------     (29-5-22)     --------------------
+//Exercici  Corregit  -------------     (29-5-22)     -------------  //! REPASAR -- 1.5 PUNTOS (DE 2)
+
 
 const doubleAfterTwoSeconds = (a) => {
     let result = a * 2;
@@ -179,7 +181,7 @@ asyncDoubleNumber(parseInt(Math.random() * 100))
 
 
 
-
+// Nivell 3     //* --- CORREGIT
 // Aquest és l'exercici que no em funcionava bé.
 // Era perquè el nom de la funció asíncrona era el mateix que la funció de l'exercici anterior.
 

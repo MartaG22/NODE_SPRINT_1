@@ -1,6 +1,6 @@
 //!Entrega 1.3: Promises & Callbacks
 
-// Nivell 1 - Exercici 1    //*-----OKKKKK
+// Nivell 1 - Exercici 1    //!-----OKKKKK
 /* Crea una funció que retorni una Promise que invoqui la funció resolve() o reject() que rep.
 Invoca-la passant-li les dues funcions de manera que imprimeixin un missatge diferent depenent de si la Promise es resol o no.*/
 
@@ -25,7 +25,7 @@ miPromesa().then(function (missatge) {
 
 
 
-// Nivell 1 - Exercici 2   //* --- CORREGIT-----OKKKKK
+// Nivell 1 - Exercici 2   //! --- CORREGIT-----OKKKKK
 /*Crea una arrow function que rebi un paràmetre i una funció callback i li passi a la funció un missatge o un altre (que s'imprimirà per consola) en funció del paràmetre rebut.*/
 //? Havía fet l'exercici sense callback
 
@@ -52,7 +52,7 @@ sumNums(parseInt(Math.random() * 100), showResult)
 
 
 
-// Nivell 2 - Exercici 1  //* --- CORREGIT
+// Nivell 2 - Exercici 1  // --- CORREGIT  //! REPETIR -- 0.5 PUNTOS
 
 // Donats els objectes employees i salaries, crea una arrow function getEmployee()
 // que retorni una Promise efectuant la cerca en l'objecte pel seu id.
@@ -103,7 +103,7 @@ getEmployee(2)
 
 
 
-// Nivell 2 - Exercici 2  //! --- CORREGIT  
+// Nivell 2 - Exercici 2  //! --- CORREGIT   //! REPETIR -- 0 PUNTS
 
 /* Crea una altra arrow function getSalary() similar a l'anterior que rebi com a paràmetre un objecte employee i
   retorni el seu salari.*/
@@ -133,7 +133,7 @@ getSalary(employees[2])
 
 
 
-// Nivell 2 - Exercici 3  // --- CORREGIT  //! REVISAR
+// Nivell 2 - Exercici 3  // --- CORREGIT  //! REVISAR  //! REPETIR -- 0 PUNTS
 
 /* Invoca la primera funció getEmployee() i després getSalary() niant l'execució de les dues promises
   de manera que es retorni per la consola el nom de l'empleat i el seu salari.*/
@@ -141,7 +141,7 @@ getSalary(employees[2])
 
 
 
-//Exercici  Corregit  ------------    (28-5-22)    ---------------//!Exercici  tornat a Corregir   (31-5-22)
+//Exercici  Corregit  ------------    (28-5-22)    ---------------Exercici  tornat a Corregir   (31-5-22)
 // Si li trec el catch, em dona error
 
 getEmployee(1).then(name => {
@@ -154,7 +154,8 @@ getEmployee(1).then(name => {
 
 
 
-// Nivell 3 - Exercici 1     // --- CORREGIT   
+// Nivell 3 - Exercici 1     // --- CORREGIT    //! REVISAR  //! REPETIR -- 1 PUNT (DE 2)
+
 
 /* Fixa un element catch a la invocació del nivell anterior que capturi qualsevol error i el mostri per la consola.*/
 
