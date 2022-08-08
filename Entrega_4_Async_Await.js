@@ -161,6 +161,7 @@ asyncOperation(4, 5);
 
 //Exercici  Corregit  -------------     (29-5-22)     -------------  //! REPASAR -- 1.5 PUNTOS (DE 2)
 
+//? - El N2 no fas el segon que es demana: la funció que rebi tres numeros y calculi la suma dels dobles.
 
 const doubleAfterTwoSeconds = (a) => {
     let result = a * 2;
