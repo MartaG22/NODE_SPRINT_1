@@ -137,7 +137,7 @@ const getSalary = (empleat) => {
         if (empleatBuscat) {
             resolve(empleatBuscat.salary);
         } else {
-            reject(`No s'ha trobat aquest treballador`);
+            reject(new Error(`No s'ha trobat salari.`));
         }
     });
 };
@@ -147,8 +147,8 @@ async function asyncFunction(idEmpleat) {
         const currentEmployee = await getEmployee(idEmpleat);
         const currentSalary = await getSalary(currentEmployee);
         console.log(`L'empleat amb l'ID ${idEmpleat} és: ${currentEmployee.name}, i té ${currentSalary} € de salari`);
-    } catch (error) {
-        console.log(error);
+    } catch (Error) {
+        console.log(Error.message);
     }
 };
 
@@ -166,18 +166,23 @@ asyncFunction(3);
 
 
 const sumAfterTwoSeconds = (a, b) => {
-    return new Promise(resolve => setTimeout(() => resolve(a + b), 2000));
-}
+    return new Promise((resolve, reject) => {
+        if (!isNaN(a) || !isNaN(b)) {
+            setTimeout(() => resolve(a + b), 2000);
+        } else {
+            reject(new Error);
+        }
+    });
+};
 
 async function asyncOperation(a, b) {
     try {
         const result = await sumAfterTwoSeconds(a, b);
         return console.log(`Resultat després de 2 segons: ${result}`);
-    } catch (error) {
-        console.log(error);
+    } catch (Error) {
+        console.log("Nivell 1 - Exercici 2:  No s'ha pogut realitzar l'operació");
     }
 }
-
 asyncOperation(4, 5);
 
 
@@ -189,11 +194,24 @@ asyncOperation(4, 5);
 //Exercici  Corregit  -------------     (29-5-22)     -------------  //! REPASSAT!!!
 
 
+// const doubleAfterTwoSeconds = (a) => {
+//     let result = a * 2;
+//     let message = `${a} * 2 = ${result}`
+//     return new Promise(resolve => setTimeout(() => resolve(message), 2000))
+// }
+
 const doubleAfterTwoSeconds = (a) => {
-    let result = a * 2;
-    let message = `${a} * 2 = ${result}`
-    return new Promise(resolve => setTimeout(() => resolve(message), 2000))
-}
+    return new Promise((resolve, reject) => {
+        if (!isNaN(a)) {
+            let result = a * 2;
+            let message = `${a} * 2 = ${result}`
+            setTimeout(() => resolve(message), 2000);
+        } else {
+            reject(new Error);
+        }
+    })
+};
+
 
 async function asyncDoubleNumber(number1) {
     try {
@@ -210,16 +228,46 @@ asyncDoubleNumber(parseInt(Math.random() * 100))
 
 /* Crea una altra funció que rebi tres números i calculi la suma dels seus dobles
  usant la funció anterior.*/
- //? - El N2 no fas el segon que es demana: la funció que rebi tres numeros y calculi la suma dels dobles.
+//? - El N2 no fas el segon que es demana: la funció que rebi tres numeros y calculi la suma dels dobles.
 
 // --------------------------------------------------------------------- //!Exercici  tornat a Corregir  (10-8-22)
 
 
+// const doubleOfNumber = (a) => {
+//     let result = 0;
+//     result = a * 2;
+//     return new Promise(resolve => setTimeout(() => resolve(result), 2000));
+// };
+
+
 const doubleOfNumber = (a) => {
-    let result = 0;
-    result = a * 2;
-    return new Promise(resolve => setTimeout(() => resolve(result), 2000));
+    return new Promise((resolve, reject) => {
+        if (!isNaN(a)) {
+            let result = 0;
+            result = a * 2;
+            setTimeout(() => resolve(result), 2000);
+        } else {
+            reject(new Error("Nivell 2 - Exercici 1B:  No s'ha pogut realitzar l'operació"));
+        }
+    })
 };
+
+//TODO cambiar la Promise con el reject a la función de abajo
+
+async function sumDoubleThreeNumbers(num1, num2, num3) {
+    try {
+        new Promise(resolve => setTimeout(() => resolve(console.log(`Els nombres escollits són:  ${num1}, ${num2}, ${num3}`)), 2000));
+        let doubleNumber1 = await doubleOfNumber(num1);
+        let doubleNumber2 = await doubleOfNumber(num2);
+        let doubleNumber3 = await doubleOfNumber(num3);
+        console.log(`Els dobles dels nombres anteriors són:  ${doubleNumber1}  ${doubleNumber2}  ${doubleNumber3}`);
+        let sumDoubleNumbers = doubleNumber1 + doubleNumber2 + doubleNumber3;
+        console.log(`El resultat de sumar el doble dels nombres és: ${sumDoubleNumbers}`);
+    } catch (Error) {
+        console.log(Error.message);
+    };
+};
+
 
 async function sumDoubleThreeNumbers(num1, num2, num3) {
     try {
@@ -235,6 +283,7 @@ async function sumDoubleThreeNumbers(num1, num2, num3) {
     }
 }
 
+
 (function getThreeNumbers() {
     let number1 = parseInt(Math.random() * 20);
     let number2 = parseInt(Math.random() * 20);
@@ -247,3 +296,10 @@ async function sumDoubleThreeNumbers(num1, num2, num3) {
 
 // Nivell 3     //* --- CORREGIT
 // /* Força i captura tants errors com puguis dels nivells 1 i 2.*/
+// --------------------------------------------------------------------- //!Exercici  tornat a Corregir  (10-8-22)
+
+
+/*asyncFunction(4);
+asyncOperation("a", "b");
+asyncDoubleNumber("a");
+sumDoubleThreeNumbers("1"); */
