@@ -51,7 +51,7 @@ sumNums(parseInt(Math.random() * 100), showResult)
 
 
 
-// Nivell 2 - Exercici 1  // --- CORREGIT  //! REPETIR -- 0.5 PUNTOS
+// Nivell 2 - Exercici 1  // --- CORREGIT  //! REPASSAT
 
 // Donats els objectes employees i salaries, crea una arrow function getEmployee()
 // que retorni una Promise efectuant la cerca en l'objecte pel seu id.
@@ -82,9 +82,25 @@ let salaries = [{
 
 
 // Exercici  Corregit  ------------    (28-5-22)    --------------- //!Exercici  tornat a Corregir  (31-5-22)
+// ---------------------------------------------------------------- //!Exercici  tornat a Corregir  (8-8-22)
 
 
 const getEmployee = (id) => {
+    return new Promise((resolve, reject) => {
+        let empleatBuscat = employees.find(employee => employee.id == id)
+        // let positionEmployee = (employees.findIndex(found => found.id === id));
+        if (empleatBuscat) {
+            resolve(empleatBuscat);
+            // resolve(`Empleat:  ${employees[positionEmployee].name}!`);
+        } else {
+            reject(new Error(`No s'ha trobat el treballador amb l'ID ${id}`));
+        }
+    });
+}
+
+
+//? Exercici anterior:
+/*  const getEmployee = (id) => {
     return new Promise((resolve, reject) => {
 
         let positionEmployee = (employees.findIndex(found => found.id === id));
@@ -94,7 +110,7 @@ const getEmployee = (id) => {
             reject(new Error(`No s'ha trobat el treballador amb l'ID ${id}`));
         }
     });
-}
+} */
 
 getEmployee(2)
     .then(resolve => console.log(resolve))
@@ -102,16 +118,28 @@ getEmployee(2)
 
 
 
-// Nivell 2 - Exercici 2  //! --- CORREGIT   //! REPETIR -- 0 PUNTS
+// Nivell 2 - Exercici 2  // --- CORREGIT  //! REPASSAT
 
 /* Crea una altra arrow function getSalary() similar a l'anterior que rebi com a paràmetre un objecte employee i
   retorni el seu salari.*/
 
+//*Exercici  tornat a Corregir  ------------  (31 -5-22) ------------  
+// Exercici  tornat a Corregir  -------------------------------------- //!Exercici  tornat a Corregir  (8-8-22)  
 
+const getSalary = (empleat) => {
+    return new Promise((resolve, reject) => {
+        let empleatBuscat = salaries.find(salario => salario.id === empleat.id);
 
-//*Exercici  tornat a Corregir  ------------    (31 -5-22)    ---------------  
+        if (empleatBuscat) {
+            resolve(`Salari: ${empleatBuscat.salary}`);
+        } else {
+            reject(`No s'ha trobat aquest treballador`);
+        }
+    });
+}
 
-const getSalary = (currentEmployee) => {
+//? Exercici anterior:
+/*const getSalary = (currentEmployee) => {
     return new Promise((resolve, reject) => {
         let position = (employees.indexOf(currentEmployee));
 
@@ -122,49 +150,64 @@ const getSalary = (currentEmployee) => {
             reject(`No s'ha trobat aquest treballador`);
         }
     });
-}
+};  */
 
-getSalary(employees[2])
+let empleat = { id: 2, name: 'Bill Gates' }
+getSalary(empleat)
     .then(resolve => console.log(resolve))
     .catch(Error => console.log(Error))
 
 
 
-
-
-// Nivell 2 - Exercici 3  // --- CORREGIT  //! REVISAR  //! REPETIR -- 0 PUNTS
+// Nivell 2 - Exercici 3  // --- CORREGIT  //! REPASSAT!!!
 
 /* Invoca la primera funció getEmployee() i després getSalary() niant l'execució de les dues promises
   de manera que es retorni per la consola el nom de l'empleat i el seu salari.*/
 
 
+// Exercici  Corregit  ------------    (28-5-22)    ---------------Exercici  tornat a Corregir   (31-5-22)
+// Exercici  tornat a Corregir  ----------------------------------- //!Exercici  tornat a Corregir  (8-8-22)  
+
+let idEmpleat = 1;
+getEmployee(idEmpleat)
+    .then(empleat => {getSalary(empleat)
+    .then(salari => { console.log (`Empleat: ${empleat.name} * ${salari}`)})
+    });
 
 
-//Exercici  Corregit  ------------    (28-5-22)    ---------------Exercici  tornat a Corregir   (31-5-22)
-// Si li trec el catch, em dona error
-
-getEmployee(1).then(name => {
+//? Exercici anterior:          
+ /* getEmployee(1).then(name => {
     console.log(name);
-    return getSalary(name);
-}).then(salary => {
-    console.log(salary)
-}).catch(Error);
+        return getSalary(name);
+       }).then(salary => {
+       console.log(salary)
+       }).catch(Error); */
 
 
 
 
-// Nivell 3 - Exercici 1     // --- CORREGIT    //! REVISAR  //! REPETIR -- 1 PUNT (DE 2)
-
+// Nivell 3 - Exercici 1     // --- CORREGIT    //! REPASSAT!!!
 
 /* Fixa un element catch a la invocació del nivell anterior que capturi qualsevol error i el mostri per la consola.*/
 
 //Exercici  Corregit  ------------    (28-5-22)    ---------------  
+// Exercici  tornat a Corregir  ----------------------------------- //!Exercici  tornat a Corregir  (8-8-22)  
 
 
-getEmployee(6).then(name => {
-    console.log(name);
-    return getSalary(name);
-}).then(salary => {
-    console.log(salary);
-}).catch(Error);
+idEmpleat = 7;
+getEmployee(idEmpleat)
+    .then(empleat => {getSalary(empleat)
+    .then(salari => { console.log (`Empleat: ${empleat.name} * ${salari}`)})
+    })
+    .catch(Error => console.log("ERROR: No s'ha trobat aquest treballador"));
+
+
+
+//? Exercici anterior:          
+// getEmployee(6).then(name => {
+//     console.log(name);
+//     return getSalary(name);
+// }).then(salary => {
+//     console.log(salary);
+// }).catch(Error);
 
