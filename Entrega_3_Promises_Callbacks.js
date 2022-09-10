@@ -19,8 +19,7 @@ miPromesa().then(function (missatge) {
     console.log(`El nombre és parell!!!  ${missatge}`);
 
 }).catch(function (missatge) {
-    console.log(`Aquest nombre és parell!!!  ${missatge}`);
-
+    console.log(`Aquest nombre no és parell!!!  ${missatge}`);
 });
 
 
