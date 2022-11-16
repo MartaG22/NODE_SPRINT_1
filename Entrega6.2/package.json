@@ -1,0 +1,14 @@
+{
+  "name": "entrega6.2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercici_1-6.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Marta",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.3.1"
+  }
+}

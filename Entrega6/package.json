@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/MartaG22/entrega6#readme",
   "dependencies": {
-    "jest": "^28.1.0"
+    "jest": "^28.1.3"
   }
 }
