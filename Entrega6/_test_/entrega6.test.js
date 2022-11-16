@@ -39,11 +39,11 @@ describe("function dividir", () => {
 //Nivell 1 - B   //! SIN ACABAR - ME DA ERROR
 // Crea els tests corresponents per verificar el funcionament de l'exercici Async / Await Nivell 1 - Exercici 1
 
-const testB = require("../app/asyncAwait_N1-1.js");
+const {getEmployee, getSalary, asyncFuntion}  = require("../app/asyncAwait_N1-1.js");
 
 test('getEmployee with ID: 2 should return Bill Gates', async () => {
-    await testB.getEmployee(2).then(data => {
-        return expect(data).toBe({ id: 2, name: "Bill Gates" })
+    await getEmployee(2).then(data => {
+        return expect(data).toStrictEqual({ id: 2, name: "Bill Gates" })
     });
 })
 
