@@ -120,7 +120,7 @@ describe("Busquem el nom de l'empleat i el seu salari", () => {
 // //     })
 // // })
 
-
+/*
 //! Nivell 1 - C
 // Crea els tests corresponents per verificar el funcionament de l'exercici Async / Await Nivell 2 - Exercici 1
 
@@ -132,7 +132,7 @@ test('Should return ID:3, name: Jeff Bezos after 2 seconds', async () => {
         expect(data).toEqual({ id: 3, name: 'Jeff Bezos' });
     })
 })
-
+*/
 
 // Nivell 1 - D
 // Crea els tests corresponents per verificar el funcionament de l'exercici **Promises & Callbacks Nivell 2 - Exercici 3
