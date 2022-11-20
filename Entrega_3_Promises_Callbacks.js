@@ -40,7 +40,7 @@ function showResult(result) {
     }
 }
 
-function sumNums(number1, callback) {
+const sumNums = (number1, callback) => {
     let number2 = parseInt(Math.random() * 100);
     const result = number1 + number2;
     callback(result);
