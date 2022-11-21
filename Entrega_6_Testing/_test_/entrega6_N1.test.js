@@ -57,7 +57,7 @@ describe(`Comprova exercici 2 nivell 1, entrega 1-3`, () => {
     if (randomNumber / 2 === 0) {
       console.log(randomNumber / 2);
       expect(sumNums(randomNumber, showResult)).toStrictEqual(`El nombre ${randomNumber} és parell!!!`);
-    }
+    } 
   });
 });
 /*
