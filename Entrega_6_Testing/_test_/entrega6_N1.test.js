@@ -4,7 +4,7 @@
 
 // https://www.youtube.com/watch?v=r9HdJ8P6GQI
 
-// Nivell 1 - A  //! okkkk
+//! Nivell 1 - A 
 /*Crea un arxiu amb les funcions sumar, restar, multiplicar i dividir dos o més operands. Testeja la correcta execució d'aquestes funcions.*/
 
 const calculate = require("../app/N1A_operacions_1-6.js");
@@ -56,9 +56,7 @@ describe(`Comprova exercici 2 nivell 1, entrega 1-3`, () => {
     console.log("randomNumber PARELL", randomNumber);
     if (randomNumber / 2 === 0) {
       console.log(randomNumber / 2);
-      expect(sumNums(randomNumber, showResult)).toStrictEqual(
-        `El nombre ${randomNumber} és parell!!!`
-      );
+      expect(sumNums(randomNumber, showResult)).toStrictEqual(`El nombre ${randomNumber} és parell!!!`);
     }
   });
 });
@@ -81,11 +79,10 @@ describe(`Comprova exercici 2 nivell 1, entrega 1-3`, () => {
 //! Nivell 1 - C
 // 03 C- Crea els tests corresponents per verificar el funcionament de les funcions de l'exercici Promises i Callbacks N2 E1 i Promises i Callbacks N2 E2 (getEmployee() i getSalary()).
 
-// Nivell 2
-// - Exercici 1
+//! Nivell 2 - Exercici 1
 // Donats els objectes employees i salaries, crea una arrow function getEmployee() que retorni una Promise efectuant la cerca en l'objecte pel seu id.
 
-// - Exercici 2
+//! Nivell 2 - Exercici 2
 // Crea una altra arrow function getSalary() similar a l'anterior que rebi com a paràmetre un objecte employee i retorni el seu salari.
 
 const {
@@ -148,12 +145,10 @@ describe("Busquem el salari de l'empleat anterior", () => {
 
 //! Nivell 1 - D
 // 04 D- Crea els tests corresponents per verificar el funcionament de l'exercici Async / Await N1 E2.
-// Nivell 1 - Exercici 2   // -------- CORREGIT
+//! Nivell 1 - Exercici 2   
+// Crea una nova funció asíncrona que cridi a una altra que retorni una Promise
+//  que efectuï la seva funció resolve() després de 2 segons de la seva invocació.*/
 
-/* Crea una nova funció asíncrona que cridi a una altra que retorni una Promise
- que efectuï la seva funció resolve() després de 2 segons de la seva invocació.*/
-
-//Exercici  Corregit  ------------     (29-5-22)  -------------  //! OKKK!! -- 2 PUNTOS (MAX)
 
 /*
 const {

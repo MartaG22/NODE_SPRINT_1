@@ -8,10 +8,6 @@ const CrearAnimal = (tipoAnimal) => {
 
     animal.altreAnimal = tipoAnimal || "no se sap";
     return animal;
-
-    // getmodel() {
-    //     return this.model = "Model europeu";
-    // }
 }
 
 module.exports = {CrearAnimal};

@@ -4,6 +4,7 @@
 
 
 //!  NIVELL 2 - A
+// Verifica mitjançant tests l'execució de l'exercici Async/Await N2 E1 utilitzant Jest Fake Timers.
 //! exercici Async/Await N2 E1
 // Crea una funció que retorni el doble del número que li passa com a paràmetre després de 2 segons.
 // Crea una altra funció que rebi tres números i calculi la suma dels seus dobles fent servir la funció anterior.
@@ -25,9 +26,8 @@
 
 
 //! Nivell2 - B
-//! exercici  Classes & Arrow Functions - N2 E2
 // Crea un mock que comprovi les crides al constructor de la classe Persona i al seu mètode. dirNom() en l'exercici Classes & Arrow Functions - N2 E2 i testeja que funcionen.
-// Nivell 2 - Exercici 2  --- OKKK
+//! exercici  Classes & Arrow Functions - N2 E2
 /*Crea una classe Persona que rebi un paràmetre 'nom' al ser instanciada. 
 La classe inclourà un mètode dirNom que imprimeixi per consola el paràmetre 'nom'. Invoca el mètode dirNom des de fora de la classe.*/
 
